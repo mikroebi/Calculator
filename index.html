@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="calculator">
+        <div class="calculator-grid">
+            <!-- Display Screen -->
+            <div class="output">
+                <div class="mode-indicators">
+                    <span data-angle-mode>DEG</span>
+                    <span data-2nd-indicator class="hidden">2nd</span>
+                </div>
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand">0</div>
+            </div>
+
+            <!-- Top Section: Scientific Functions (6 columns) -->
+            <button data-action="second-function" class="second-fn">2nd</button>
+            <button data-action="cycle-angle-mode" class="scientific">DEG</button>
+            <button data-action="pi" class="scientific">π</button>
+            <button data-action="e" class="scientific">e</button>
+            <button data-action="clear" class="modifier">AC</button>
+            <button data-action="delete" class="modifier">⌫</button>
+
+            <button data-action="sine" class="scientific" data-second-action="arc-sine">sin</button>
+            <button data-action="cosine" class="scientific" data-second-action="arc-cosine">cos</button>
+            <button data-action="tangent" class="scientific" data-second-action="arc-tangent">tan</button>
+            <button data-action="power" class="scientific" data-second-action="root">xʸ</button>
+            <button data-action="log" class="scientific" data-second-action="power-of-10">log</button>
+            <button data-action="ln" class="scientific" data-second-action="exp">ln</button>
+            
+            <button data-action="square-root" class="scientific">√</button>
+            <button data-action="square" class="scientific">x²</button>
+            <button data-action="cube" class="scientific">x³</button>
+            <button data-action="absolute" class="scientific">|x|</button>
+            <button data-action="modulo" class="scientific">mod</button>
+            <button data-action="factorial" class="scientific">x!</button>
+
+            <button data-action="memory-clear" class="memory">MC</button>
+            <button data-action="memory-recall" class="memory">MR</button>
+            <button data-action="memory-add" class="memory">M+</button>
+            <button data-action="memory-subtract" class="memory">M-</button>
+            <button data-action="memory-store" class="memory">MS</button>
+            <button data-action="reciprocal" class="scientific">1/x</button>
+
+            <!-- Separator -->
+            <div class="grid-separator"></div>
+
+            <!-- Bottom Section: Standard 4x5 Grid Layout -->
+            <div class="standard-pad">
+                <button data-action="open-parenthesis">(</button>
+                <button data-action="close-parenthesis">)</button>
+                <button data-action="percentage" >%</button>
+                <button data-value="/" class="operator">÷</button>
+
+                <button data-value="7">7</button>
+                <button data-value="8">8</button>
+                <button data-value="9">9</button>
+                <button data-value="*" class="operator">×</button>
+
+                <button data-value="4">4</button>
+                <button data-value="5">5</button>
+                <button data-value="6">6</button>
+                <button data-value="-" class="operator">−</button>
+
+                <button data-value="1">1</button>
+                <button data-value="2">2</button>
+                <button data-value="3">3</button>
+                <button data-value="+" class="operator">+</button>
+
+                <button data-value="0" class="span-two">0</button>
+                <button data-value=".">.</button>
+                <button data-action="calculate" class="operator">=</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- The final JavaScript file -->
+    <script src="code.js"></script>
+</body>
+</html>

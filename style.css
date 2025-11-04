@@ -1,0 +1,168 @@
+:root {
+    --bg-color: #787c6a;
+    --calculator-bg: #2d2d2d;
+    --button-bg: #4a4a4a;
+    --operator-bg: #0c7aad;
+    --second-fn-bg: #ffb74d;
+    --memory-bg: #7e57c2;
+    --modifier-bg: #f89d9d;
+    --text-color: #f0f0f0;
+    --previous-operand-color: rgba(240, 240, 240, 0.6);
+    --border-radius: 12px;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.calculator {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    width: 480px;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    background-color: #333;
+    padding: 2px;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: right;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.mode-indicators {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--previous-operand-color);
+}
+
+.mode-indicators .hidden {
+    visibility: hidden;
+}
+
+.previous-operand {
+    color: var(--previous-operand-color);
+    font-size: 1.2rem;
+    min-height: 1.5em;
+}
+
+.current-operand {
+    font-weight: 700;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+button {
+    border: none;
+    padding: 20px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #5a5a5a;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* Button Type Styles */
+.operator {
+    background-color: var(--operator-bg);
+    color: #e7e1e1;
+    font-weight: 700;
+}
+
+.operator:hover {
+    background-color: #29b6f6;
+}
+
+.second-fn {
+    background-color: var(--second-fn-bg);
+    color: #000;
+}
+
+.second-fn:hover {
+    background-color: #ffa726;
+}
+
+.memory {
+    background-color: var(--memory-bg);
+}
+
+.memory:hover {
+    background-color: #673ab7;
+}
+
+.scientific {
+    background-color: #3a3a3a;
+}
+
+.scientific:hover {
+    background-color: #4a4a4a;
+}
+
+.modifier {
+    background-color: var(--modifier-bg);
+}
+
+.modifier:hover {
+    background-color: #f44336;
+}
+
+/* Separator for visual distinction */
+.grid-separator {
+    grid-column: 1 / -1;
+    height: 10px;
+    background-color: #333;
+}
+
+/* Standard Pad Layout */
+.standard-pad {
+    grid-column: 1 / -1; /* Span the full width of the main grid */
+    display: grid; /* Create a nested grid */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for the standard layout */
+    gap: 2px;
+    background-color: #333;
+    padding: 2px;
+}
+
+.span-two {
+    grid-column: span 2;
+}
